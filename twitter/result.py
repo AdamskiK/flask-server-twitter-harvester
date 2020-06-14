@@ -1,5 +1,8 @@
 import datetime
 import json
+import logging
+
+logger = logging.getLogger(__name__)
 
 
 class Result:
@@ -7,6 +10,7 @@ class Result:
     insert object in the database."""
 
     def __init__(self, tweet_id, tweet, tweet_url, user, source, created_at):
+        logger.info('Preparing object for: {}'.format(tweet_id))
         self.result = {
             'tweet_id': tweet_id,
             'tweet': tweet,

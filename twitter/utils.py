@@ -1,5 +1,7 @@
-import os
+import logging
 import requests
+
+logger = logging.getLogger(__name__)
 
 
 class Request(object):
@@ -8,4 +10,5 @@ class Request(object):
         self.headers = {"Content-Type": "application/json"}
 
     def post(self, data):
+        logger.info('Making post request to url: {}'.format(self.url))
         _ = requests.post(self.url, data=data, headers=self.headers)

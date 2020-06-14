@@ -8,7 +8,6 @@ from listener import StreamListener
 from requests.exceptions import Timeout, ConnectionError
 from urllib3.exceptions import ReadTimeoutError
 
-logging.config.fileConfig('logging.conf')
 logger = logging.getLogger(__name__)
 
 

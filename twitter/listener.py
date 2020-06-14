@@ -1,15 +1,17 @@
+import logging.config
 import os
 import tweepy
 
 from utils import Request
 from result import Result
 
+logger = logging.getLogger(__name__)
+
 
 class StreamListener(tweepy.StreamListener):
-    def __init__(self, keywords, logging):
+    def __init__(self, keywords):
         super(StreamListener, self).__init__()
         self.keywords = keywords
-        self.logging = logging
 
     @staticmethod
     def authorize(consumer_key, consumer_secret, access_key, access_secret):
@@ -39,5 +41,5 @@ class StreamListener(tweepy.StreamListener):
             request.post(data=obj)
 
         except Exception as e:
-            self.logging.info(f"Exception: {e}")
+            logger.debug(f"Exception: {e}")
             pass
