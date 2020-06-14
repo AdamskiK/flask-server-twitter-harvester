@@ -1,11 +1,14 @@
 import logging
+import logging.config
 import os
 
 from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
-logging.basicConfig(level=logging.DEBUG)
+logging.config.fileConfig('./logging.conf')
+logger = logging.getLogger('app')
+
 app = Flask(__name__)
 basedir = os.path.abspath(os.path.dirname(__file__))
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///' + os.path.join(basedir, 'db.sqlite')
@@ -52,6 +55,7 @@ def add_tweet():
     user = request.json['user']
     source = request.json['source']
     created_at = request.json['created_at']
+    logger.info(f'Added new tweet id: {tweet_id}')
     new_tweet = Tweet(tweet_id, tweet, tweet_url, user, source, created_at)
     db.session.add(new_tweet)
     db.session.commit()
@@ -67,6 +71,6 @@ def get_all_tweets():
 
 
 if __name__ == '__main__':
-    logging.info('Started')
+    logger.info('Started')
     app.run(debug=True)
-    logging.info('Finished')
+    logger.info('Finished')
