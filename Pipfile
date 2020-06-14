@@ -1,0 +1,21 @@
+[[source]]
+name = "pypi"
+url = "https://pypi.org/simple"
+verify_ssl = true
+
+[dev-packages]
+
+[packages]
+marshmallow = "==2.20.1"
+flask = "*"
+flask-sqlalchemy = "*"
+flask-marshmallow = "*"
+marshmallow-sqlalchemy = "*"
+tweepy = "*"
+requests = "*"
+urllib3 = "*"
+python-dotenv = "*"
+
+
+[requires]
+python_version = "3.7"
