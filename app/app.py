@@ -1,4 +1,3 @@
-import logging
 import logging.config
 import os
 
@@ -6,7 +5,7 @@ from flask import Flask, request, jsonify
 from flask_sqlalchemy import SQLAlchemy
 from flask_marshmallow import Marshmallow
 
-logging.config.fileConfig('./logging.conf')
+logging.config.fileConfig('app/logging.conf')
 logger = logging.getLogger('app')
 
 app = Flask(__name__)
