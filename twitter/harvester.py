@@ -23,7 +23,7 @@ class Harvester:
                 self._listen(keywords)
             except (tweepy.RateLimitError, Timeout, ssl.SSLError, ReadTimeoutError, ConnectionError, tweepy.TweepError) as e:
                 logger.error(f"Error {e} waiting ~1 min to continue")
-                time.sleep(int(os.environ["ERROR_WAIT_TIME"]))
+                time.sleep(int(os.environ.get("ERROR_WAIT_TIME", 60)))
 
     @staticmethod
     def _listen(keywords):
