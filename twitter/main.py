@@ -1,13 +1,14 @@
 import logging.config
 logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
+import os
 
 from harvester import Harvester
 
 
 def main():
-    keywords_list = ["bitcoin", "gold"]
+    parsed_keywords = os.environ['KEYWORDS'].split(",")
     harvester = Harvester()
-    harvester.harvest(keywords=keywords_list)
+    harvester.harvest(keywords=parsed_keywords)
 
 
 if __name__ == '__main__':
