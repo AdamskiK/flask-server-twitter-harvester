@@ -1,5 +1,4 @@
 import logging.config
-logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
 import os
 
 from harvester import Harvester
@@ -12,4 +11,5 @@ def main():
 
 
 if __name__ == '__main__':
+    logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
     main()
