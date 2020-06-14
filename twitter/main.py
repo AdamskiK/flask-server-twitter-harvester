@@ -1,12 +1,14 @@
-import logging
+import logging.config
+logging.config.fileConfig('logging.conf', disable_existing_loggers=False)
 
 from harvester import Harvester
 
-logging.basicConfig(level=logging.INFO, format='%(asctime)s %(levelname)s:%(message)s')
-keywords_list = ["bitcoin", "gold"]
+
+def main():
+    keywords_list = ["bitcoin", "gold"]
+    harvester = Harvester()
+    harvester.harvest(keywords=keywords_list)
+
 
 if __name__ == '__main__':
-    logging.info('Started')
-    harvester = Harvester(logging=logging)
-    harvester.harvest(keywords=keywords_list)
-    logging.info('Finished')
+    main()
