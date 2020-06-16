@@ -4,3 +4,4 @@
 *.log
 *.iml
 *.idea
+db.sqlite
