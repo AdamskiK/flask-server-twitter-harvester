@@ -37,7 +37,7 @@ class StreamListener(tweepy.StreamListener):
                             )
 
             obj = result.convert_dict_to_json_string()
-            request = Request(url=os.environ['POST_API_URL'])
+            request = Request(url=os.environ.get("POST_API_URL", "http://127.0.0.1:5000/tweet"))
             request.post(data=obj)
 
         except Exception as e:
