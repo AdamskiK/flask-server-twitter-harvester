@@ -5,7 +5,6 @@
 ![Python version](https://img.shields.io/badge/python-3.7+-blue.svg)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<h5>A full-fledged web crawler for Goodreads</h5>
 </div>
 
 A small Python project to pull data from Twitter using Flask webserver and SQLite database. 
