@@ -14,14 +14,15 @@ A small Python project to pull data from Twitter using Flask webserver and SQLit
 1. [Introduction](#introduction)
 1. [Installation](#installation)
 1. [Usage](#usage)
+1. [Next](#next)
 1. [Contributing](#contributing)
 
 
 ## Introduction
 
-This is a Python + Flask (SQLAlchemy, Marshmallow) + SQLite based Twitter posts harvester that fetches data from Twitter. This can be used for collecting a large data set in a short period of time, for data analysis/visualization projects.
+This roject is based on the following technology stack Python, Flask (SQLAlchemy, Marshmallow) and SQLite. The harvester fetches posts from Twitter and saves them in the database. This project can be used for collecting large data sets in a short time period. It might be helpful for data analysis/visualization projects.
 
-The maximum number of gathered Tweets can't exceed 1% of the global number of tweets. During the data harvesting, some rate limits might be exceeded or other connection errors might appear, thus you can set the waiting time between calls if any error appears using the `ERROR_WAIT_TIME` variable. The default value is set to 60 seconds.
+The maximum number of gathered Tweets can't exceed 1% of the global number of tweets (throughput). During the data harvesting, some rate limits might be exceeded or other connection errors might appear, thus you can set the waiting time between calls if any errors appear using the `ERROR_WAIT_TIME` variable. The default value is set to 60 seconds.
 
 
 ## Installation
@@ -118,11 +119,13 @@ Here is an example chunk of returned results:
 ]
 ```
 
+## Next
+- add tests
+- data cleaning before inserting into the database
+- adding another webserver for data gathering from other sources like Google Trends/currency markets etc.
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
-
-Please make sure to update tests as appropriate.
 
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
