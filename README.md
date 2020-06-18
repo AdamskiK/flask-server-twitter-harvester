@@ -20,14 +20,14 @@ A small Python project to pull data from Twitter using Flask webserver and SQLit
 
 ## Introduction
 
-This roject is based on the following technology stack Python, Flask (SQLAlchemy, Marshmallow) and SQLite. The harvester fetches posts from Twitter and saves them in the database. This project can be used for collecting large data sets in a short time period. It might be helpful for data analysis/visualization projects.
+This project is based on the following technology stack Python, Flask (SQLAlchemy, Marshmallow) and SQLite. The harvester fetches posts from Twitter and saves them in the database. This project can be used for collecting large data sets in a short time period. It might be helpful for data analysis/visualization projects.
 
 The maximum number of gathered Tweets can't exceed 1% of the global number of tweets (throughput). During the data harvesting, some rate limits might be exceeded or other connection errors might appear, thus you can set the waiting time between calls if any errors appear using the `ERROR_WAIT_TIME` variable. The default value is set to 60 seconds.
 
 
 ## Installation
 
-Download the repository and enter the main directory with the `Pipfile` and then execute the below commands:
+Download the repository and enter the main directory using `Pipfile` (if you are not familiar with this library then [HERE](https://github.com/pypa/pipenv) you can find more information) and then execute the below commands:
 
 ```bash
 pipenv install
@@ -102,19 +102,19 @@ Here is an example chunk of returned results:
     "created_at": "2020-06-13 19:56:41",
     "id": 1,
     "source": "Twitter for iPhone",
-    "tweet": "https://twitter.com/statuses/1271894280471146496",
-    "tweet_id": 1271894280471146496,
-    "tweet_url": "b'RT @JanetWintsbit: Full List of 2020 #Ethereum $ETH Partnerships, Integrations'",
-    "user": "fcknarbn"
+    "tweet": "https://twitter.com/statuses/1271894280471146411",
+    "tweet_id": 1271894280471146411,
+    "tweet_url": "b'body1'",
+    "user": "abc"
   },
   {
     "created_at": "2020-06-13 19:56:43",
     "id": 2,
     "source": "Twitter Web App",
-    "tweet": "https://twitter.com/statuses/1271894287760764928",
-    "tweet_id": 1271894287760764928,
-    "tweet_url": "b'dPi just looking sexy and getting more functionality.'",
-    "user": "carsenjk"
+    "tweet": "https://twitter.com/statuses/1271894287760764911",
+    "tweet_id": 1271894287760764911,
+    "tweet_url": "b'body2'",
+    "user": "adc"
   }
 ]
 ```
